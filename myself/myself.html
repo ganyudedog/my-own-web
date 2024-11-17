@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <link rel="shortcut icon" href="images/miku1.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="myself.css">
+    <script type="text/javascript">
+        alert("welcome to my web")
+        window.onload = function () {
+            setInterval("toggleSound()", 100);
+        }
+        function toggleSound() {
+            var music = document.getElementById("vd");//获取ID  
+            if (music.paused) { //判读是否播放  
+                music.paused = false;
+                music.play(); //没有就播放 
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 音乐 -->
+    <audio src="music/花譜 - 明日世界が滅ぶなら (如果明天世界毁灭)(1).mp3" autoplay preload loop id="vd"></audio>
+
+    <!-- 开始语言 -->
+    <div class="start">你好!欢迎进入我的主页<img
+            src="https://img-static.mihoyo.com/communityweb/upload/4d41193fa02ac31e2daf7436ba5e12cf.png" width="80px"
+            alt=""><img src="https://img-static.mihoyo.com/communityweb/upload/4d41193fa02ac31e2daf7436ba5e12cf.png"
+            width="80px" alt=""><img
+            src="https://img-static.mihoyo.com/communityweb/upload/4d41193fa02ac31e2daf7436ba5e12cf.png" width="80px"
+            alt="">
+    </div>
+
+    <!-- 背景 -->
+    <img src="images/firefly.jpg" alt="" class="background">
+    <!-- 背景结束 -->
+
+    <!-- logo开始 -->
+    <div class="logo"><img src="images/background_03.png" alt="" width="100%"></div>
+    <!-- logo结束 -->
+
+    <!-- 头像 -->
+    <div class="me"><img src="images/krara.jpeg" alt="" width="100%"></div>
+    <!-- 头像结束 -->
+
+    <!-- 想说的话 -->
+    <p class="talk">心之所向,吾之所往</p>
+    <!-- 结束 -->
+
+    <!-- 喜欢的东西 -->
+    <div class="like1">飞萤扑火的绝念,是对抗命运的剑</div>
+    <div class="like2">太微诡棋行,灵台示兆影</div>
+    <div class="like3">愿这场跨越千年的爱恋,最终绽放出万朵鲜花</div>
+    <div class="like4">当是干雩逢甘雨,愿以清心报卿心</div>
+    <!-- 结束 -->
+
+    <!-- 排列 -->
+    <img src="images/leina_03.png" alt="" width="200px" class="senleina">
+    <img src="images/mako_03.png" alt="" width="200px" class="senmako">
+    <img src="images/yosine_03.png" alt="" width="200px" class="senyosine">
+    <img src="images/murasame_03.png" alt="" width="200px" class="senmurasame">
+    <img src="images/luhua_03.png" alt="" width="200px" class="senluhua">
+    <img src="images/spring2_03.png" alt="" width="200px" class="senspring">
+    <!-- 排列结束 -->
+
+    <!-- 成分 -->
+    <div class="ingredient">
+        <div class="thing1">yuzusoft</div>
+        <div class="thing2">甘雨的狗</div>
+        <div class="thing3">南柯一梦</div>
+    </div>
+    <!-- 成分结束 -->
+
+    <!-- 填充 -->
+    <div class="right"><img src="images/xiaogong.png" alt="" width="100%"></div>
+    <div class="left"><img src="images/lookright.png" alt="" width="100%"></div>
+    <div class="right1"><img src="images/fuxuan.png" alt="" width="100%"></div>
+    <div class="location1"><img src="images/generous_06.png" alt="" width="100%"></div>
+    <div class="location2"><img src="images/pencil_03.png" alt="" width="100%"></div>
+    <div class="location3"><img src="images/happy_03.png" alt="" width="100%"></div>
+    <div class="location4"><img src="images/wink_03.png" alt="" width="100%"></div>
+    <div class="location5"><img src="images/think_03.png" alt="" width="100%"></div>
+    <!-- 填充结束 -->
+</body>
+
+</html>

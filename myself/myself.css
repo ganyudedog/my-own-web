@@ -1,0 +1,426 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: url(images/cursor.png), auto;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  min-width: 1680px;
+  height: 1000px;
+  overflow: hidden;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  background-color: #f1e2ab;
+}
+img {
+  vertical-align: top;
+  transition: all 0.5s;
+}
+/* 初始化结束 */
+/* 定义动画 */
+@keyframes key {
+  0% {
+    opacity: 1;
+    top: -500px;
+    transform: translateZ(-500px) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    top: 400px;
+    transform: translateZ(0) rotate(1800deg);
+  }
+  75% {
+    opacity: 1;
+    top: 150px;
+    transform: translateZ(0) rotate(2160deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    top: 420px;
+    transform: translateZ(0) rotate(2520deg) scale(1);
+  }
+}
+@keyframes type {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  99% {
+    width: 1120px;
+    opacity: 1;
+  }
+  100% {
+    width: 1120px;
+    opacity: 0;
+  }
+}
+@keyframes change {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes change1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes move1 {
+  0% {
+    opacity: 1;
+    left: calc(50% - 60px);
+  }
+  99% {
+    opacity: 1;
+    left: calc(50% - 200px);
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% - 200px);
+    display: none;
+  }
+}
+@keyframes move2 {
+  0% {
+    opacity: 1;
+    left: calc(50% - 60px);
+    transform: rotateX(90deg);
+  }
+  50% {
+    opacity: 1;
+    left: calc(50% - 60px);
+    transform: rotateX(0deg);
+  }
+  99% {
+    opacity: 1;
+    left: calc(50% + 80px);
+    transform: rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% + 80px);
+    transform: rotateX(0deg);
+    display: none;
+  }
+}
+@keyframes move3 {
+  0% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(360deg);
+  }
+}
+@keyframes walk1 {
+  0% {
+    opacity: 0;
+    left: calc(50% - 100px);
+    top: 300px;
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% - 284px);
+    top: 105px;
+  }
+}
+@keyframes walk2 {
+  0% {
+    opacity: 0;
+    left: calc(50% - 100px);
+    top: 300px;
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% + 130px);
+    top: 170px;
+  }
+}
+@keyframes walk3 {
+  0% {
+    opacity: 0;
+    top: 300px;
+    left: calc(50% - 5px);
+  }
+  100% {
+    opacity: 1;
+    top: 476px;
+    left: calc(50% + 295px);
+  }
+}
+@keyframes walk4 {
+  0% {
+    opacity: 0;
+    top: 300px;
+    left: calc(50% - 100px);
+  }
+  100% {
+    opacity: 1;
+    top: 538px;
+    left: calc(50% - 200px);
+  }
+}
+@keyframes walk5 {
+  0% {
+    opacity: 0;
+    left: calc(50% - 100px);
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% - 330px);
+  }
+}
+@keyframes walk6 {
+  0% {
+    opacity: 0;
+    left: calc(50% - 100px);
+  }
+  100% {
+    opacity: 1;
+    left: calc(50% + 540px);
+  }
+}
+/* 结束 */
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  filter: contrast(120%);
+  z-index: -10000;
+  animation: change 1s forwards;
+  animation-delay: 7s;
+}
+.logo {
+  position: absolute;
+  left: calc(50% - 75px);
+  top: 380px;
+  width: 150px;
+}
+.logo img {
+  position: absolute;
+  opacity: 0;
+  animation: change 1s 2 alternate;
+  animation-delay: 5s;
+  z-index: 1000;
+}
+.start {
+  position: absolute;
+  width: 1120px;
+  height: 80px;
+  top: 100px;
+  left: calc(50% - 560px);
+  opacity: 1;
+  overflow: hidden;
+  text-align: center;
+  font: italic 600 80px "宋体";
+  animation: type 3s steps(14) forwards;
+}
+.me {
+  position: absolute;
+  opacity: 0;
+  left: calc(50% - 75px);
+  top: -500px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0px 0px 20px 0px #faff72;
+  transform: translateZ(-500px);
+  animation: key 2s cubic-bezier(0.47, 0, 0.745, 0.715) 1 normal forwards;
+  animation-delay: 3s;
+}
+.me:hover {
+  filter: contrast(150%);
+}
+.talk {
+  position: absolute;
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  top: 618px;
+  opacity: 0;
+  z-index: 1000;
+  text-align: center;
+  text-shadow: 0px 0px 3px #000;
+  font: normal 400 30px/40px "微软雅黑";
+  left: calc(50% - 200px);
+  color: #fff;
+  border-top: #ff3300 solid 2px;
+  border-bottom: #ff3300 solid 2px;
+  transition: all 0.5s;
+  animation: change 1s forwards;
+  animation-delay: 8s;
+}
+.talk:hover {
+  background: -webkit-linear-gradient(left, #b0a4e3, #4c8dae);
+  transform: translateY(-10px);
+}
+div[class^=like] {
+  position: absolute;
+  box-sizing: border-box;
+  border: #edd1d8 solid 2px;
+  opacity: 0;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 20px;
+  height: 30px;
+  background: -webkit-linear-gradient(left, #b0a4e3, #4c8dae);
+  animation: change 1s forwards;
+  animation-delay: 9s;
+}
+.like1 {
+  top: 700px;
+  left: calc(50% - 500px);
+  transform: rotate(5deg);
+}
+.like2 {
+  top: 700px;
+  left: calc(50% - 10px);
+  transform: rotate(3deg);
+}
+.like3 {
+  top: 750px;
+  left: calc(50% + 50px);
+  transform: rotate(-5deg);
+}
+.like4 {
+  top: 822px;
+  left: calc(50% - 300px);
+  transform: rotate(-8deg);
+}
+.ingredient {
+  position: absolute;
+  opacity: 1;
+  top: 570px;
+  width: 100%;
+  height: 25px;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+.ingredient [class^=thing] {
+  position: absolute;
+  opacity: 0;
+  left: calc(50% - 60px);
+  width: 120px;
+  font-size: 21px;
+  line-height: 25px;
+  color: #f05654;
+  text-align: center;
+  background: -webkit-linear-gradient(left, #f1eaf2, #544257, #fdfafc, #d0c9dc);
+}
+.ingredient div:nth-child(n+2) {
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+}
+.ingredient div:nth-child(1) {
+  animation: move1 0.3s ease-in 1 normal forwards;
+  animation-delay: 4s;
+}
+.ingredient div:nth-child(2) {
+  animation: move2 0.4s ease-in 1 normal forwards;
+  animation-delay: 4.3s;
+}
+.ingredient div:nth-child(3) {
+  animation: move3 1s ease-in 1 normal forwards;
+  animation-delay: 4.7s;
+}
+div[class^=right] {
+  float: right;
+  width: 32%;
+  opacity: 0;
+  animation: change 1s 2 alternate;
+  animation-delay: 5s;
+}
+.right1 {
+  width: 36% !important;
+}
+.left {
+  float: left;
+  width: 32%;
+  margin-top: 264px;
+  opacity: 0;
+  animation: change 1s 2 alternate;
+  animation-delay: 5s;
+}
+div[class^=location] {
+  position: absolute;
+  z-index: -10;
+  animation: change1 1s forwards;
+  animation-delay: 6s;
+}
+.location1 {
+  width: calc(32% / 3);
+  top: 0;
+  left: 0;
+}
+.location2 {
+  width: calc(32% / 3);
+  top: 0;
+  left: calc(32% / 3);
+}
+.location3 {
+  width: calc(32% / 3);
+  top: 0;
+  left: calc(32% / 3 * 2);
+}
+.location4 {
+  width: calc(32% / 2);
+  top: 500px;
+  right: 0;
+}
+.location5 {
+  width: 16%;
+  top: 400px;
+  right: 16%;
+}
+img[class^=sen] {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 300px;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 1;
+}
+img[class$=leina] {
+  transform: rotate(-45deg);
+  animation: walk1 1s ease 2 alternate;
+  animation-delay: 4s;
+}
+img[class$=mako] {
+  transform: rotate(45deg);
+  animation: walk2 1s ease 2 alternate;
+  animation-delay: 4s;
+}
+img[class$=yosine] {
+  left: calc(50% - 5px);
+  animation: walk3 1s ease 2 alternate;
+  animation-delay: 4s;
+}
+img[class$=murasame] {
+  transform: rotate(-45deg);
+  animation: walk4 1s ease 2 alternate;
+  animation-delay: 4s;
+}
+img[class$=luhua] {
+  animation: walk5 1s ease 2 alternate;
+  animation-delay: 4s;
+}
+img[class$=spring] {
+  animation: walk6 1s ease 2 alternate;
+  animation-delay: 4s;
+}
